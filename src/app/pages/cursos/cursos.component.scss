@@ -1,0 +1,27 @@
+.boton-general {
+
+    padding:10px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(25, 195, 175);
+    color: white;
+    cursor: pointer;
+}
+
+.boton-general:hover {
+
+    padding:10px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(13, 45, 42);
+    color: white;
+}
+
+.boton-general.boton-general:clicke {
+
+    padding:10px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: rgb(195, 147, 25);
+    color: white;
+}

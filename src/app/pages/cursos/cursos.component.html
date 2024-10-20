@@ -1,0 +1,26 @@
+
+
+
+<link rel="stylesheet" href="cursos.component.scss"> 
+
+
+<main class="contenedor">
+    <div id="listadocursos" class="listado">
+        <h2>Listado de cursos:</h2>
+        <div class="cursos">
+            <div *ngFor="let Curso of cursos" class="curso">
+                <p><span class="curso-caracteristica">Nombre:</span> {{ Curso.nombreC }}</p>
+                <p><span class="curso-caracteristica">Instructor:</span> {{ Curso.nombreI }}</p>
+                <p><span class="curso-caracteristica">Fecha de Inicio:</span> {{ Curso.fecha }}</p>
+                <p><span class="curso-caracteristica">Duración:</span> {{ Curso.duracion }} días.</p>
+                <div class="botones">
+                    <p><span class="curso-caracteristica">Descripción:</span> {{ Curso.descripcion }}</p>
+                </div>
+                
+                    
+                    <button (click)="eliminarCursos(Curso.id)"class="boton-general">
+                        Eliminar</button>
+            </div>
+        </div>
+    </div>
+</main>

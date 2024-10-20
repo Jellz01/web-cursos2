@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reuse the main.css for uniform styling -->
+    <link rel="stylesheet" href="acursos.component.scss"> <!-- Additional styling for the form -->
+    <title>Gestión de Cursos</title>
+</head>
+<body>
+
+    
+
+    <main>
+        <section class="form-section">
+            <h1>Agregar un Nuevo Curso</h1>
+            <div id="message" class="hide"></div>
+
+            <form id="courseForm" class="course-form">
+                <label for="courseName">Nombre del Curso</label>
+                <input #nombreC type="text" id="courseName" required>
+
+                <label for="instructorName">Nombre del Instructor</label>
+                <input #nombreI type="text" id="instructorName" required>
+
+                <label for="startDate">Fecha de Inicio</label>
+                <input #fecha type="date" id="startDate" required>
+
+                <label for="duration">Duración (semanas)</label>
+                <input #duracion type="number" id="duration" required>
+
+                <label for="description">Descripción</label>
+                <textarea #descripcion id="description" required></textarea>
+
+                <button (click)="addCurso()"type="submit" class="btn-primary">Agregar Curso</button>
+                alert("Agregadoc curso correctamente");
+            </form>
+        </section>
+    </main>
+
+    
+
+</body>
+</html>
