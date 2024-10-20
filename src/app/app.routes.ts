@@ -3,6 +3,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { AcursosComponent } from './pages/acursos/acursos.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
+import { ApplicationInitStatus } from '@angular/core';
 
 export const routes: Routes = [
 
@@ -32,5 +33,7 @@ export const routes: Routes = [
         path: 'pages/curso',
         component: CursosComponent
     },
+  
+
 
 ];

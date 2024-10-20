@@ -3,7 +3,7 @@
         <div class="welcome-container">
             <h1>Bienvenido a la Plataforma de Gestión de Cursos</h1>
             <p>Desarrolla habilidades prácticas en el desarrollo web mediante nuestra plataforma interactiva de gestión de cursos.</p>
-            <button class="btn-primary">Comienza ahora</button>
+            <button class="btn-primary" href="pages/acursos">Comienza ahora</button>
         </div>
     </section>
 
@@ -17,6 +17,43 @@
             <li>Almacenar los datos de forma local con localStorage.</li>
         </ul>
     </section>
+
+    <section class="data-section">
+        <h2>Football Matches</h2>
+        <div *ngIf="data$ | async as data; else loading">
+          <table>
+            <thead>
+              <tr>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Score</th>
+                <th>Away Score</th>
+                <th>Tournament</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of data.response.events">
+                <td>{{ event.homeTeam.name }}</td>
+                <td>{{ event.awayTeam.name }}</td>
+                <td>{{ event.homeScore.display }}</td>
+                <td>{{ event.awayScore.display }}</td>
+                <td>{{ event.tournament.name }}</td>
+                <td>{{ event.status.description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #loading>
+          <p>Loading data...</p>
+        </ng-template>
+      </section>
+      
+      
+    
+    
+  
+    
 </main>
 
 <footer>

@@ -25,13 +25,23 @@ export class CursosComponent implements OnInit{
 
 
 
-  eliminarCursos(indice : number){
+  eliminarCursos(indice: number) {
+    
+    if (indice < 0 || indice >= this.cursos.length) {
+        console.error("Invalid index:", indice);
+        return; 
+    }
 
-  
-      console.log(indice); // To check the index in the console
-      this.cursos.splice(indice, 1); // Remove the course at the specified index
-      this.cursoServi.guardarCursos(); // Update the service if needed
-  }
+    console.log("Deleting course at index:", indice);
+    console.log("Course to be deleted:", this.cursos[indice]); 
+
+   
+    this.cursos.splice(indice, 1); 
+
+    console.log("Course deleted. Remaining courses:", this.cursos); 
+    this.cursoServi.guardarCursos();
+}
+
   
   
 
