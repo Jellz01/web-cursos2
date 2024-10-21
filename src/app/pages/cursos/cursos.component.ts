@@ -26,26 +26,29 @@ export class CursosComponent implements OnInit{
 
 
   eliminarCursos(indice: number) {
-    
-    if (indice < 0 || indice >= this.cursos.length) {
-        console.error("Invalid index:", indice);
-        return; 
+
+    indice = indice -1;
+    if (indice >= 0 && indice < this.cursos.length) {  // Ensure the index is valid
+        console.log("Deleting course at index:", indice);
+        console.log("Course to be deleted:", this.cursos[indice]); 
+
+        this.cursos.splice(indice, 1);  // Remove the course at the specified index
+
+        console.log("Course deleted. Remaining courses:", this.cursos); 
+        
+        if (this.cursos.length === 0) {
+            console.log("No courses remaining.");
+        }
+
+        this.cursoServi.guardarCursos();  // Save the updated list
+    } else {
+        console.log("Invalid index. No course deleted.");
+        console.log(indice);
     }
-
-    console.log("Deleting course at index:", indice);
-    console.log("Course to be deleted:", this.cursos[indice]); 
-
-   
-    this.cursos.splice(indice, 1); 
-
-    console.log("Course deleted. Remaining courses:", this.cursos); 
-    this.cursoServi.guardarCursos();
 }
 
-  
-  
 
-  }
-  
+}
+
 
 
